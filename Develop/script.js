@@ -16,11 +16,18 @@ $(document).ready(function() {
 //functions
 function saveText(event) {  
     timeValue9 = $(this).parent().attr('data-time');
-    let notesValue9 = $(this).siblings('.hour_notes').val()
+    let notesValue9 = $(this).siblings('.hour_notes9').val()
     console.log(notesValue9 + " = notes");
     console.log(timeValue9 + " = hour notes inputted");
     //save text area to localStorage
-    localStorage.setItem(timeValue9, notesValue9);           
+    localStorage.setItem(timeValue9, notesValue9); 
+    
+    timeValue10 = $(this).parent().attr('data-time');
+    let notesValue10 = $(this).siblings('.hour_notes10').val()
+    console.log(notesValue10 + " = notes");
+    console.log(timeValue10 + " = hour notes inputted");
+    //save text area to localStorage
+    localStorage.setItem(timeValue10, notesValue10);
     }
 
 // change box alerts by time    
@@ -46,7 +53,7 @@ function setHourAlert() {
             $(this).addClass('present');
             console.log('present')
         }    
-    })
+    });
 
     $('.hour_box_10').each(function() {
         //let entryHour = $(this).parent().attr('data-time');
@@ -60,13 +67,22 @@ function setHourAlert() {
             $(this).addClass('present');
             console.log('present')
         }    
-    })
+    });
 }
     
 //events
 
 //save button event
-$('#hour_btn').on('click', saveText);
+$('#hour_btn9').on('click', saveText);
+$('#hour_btn10').on('click', saveText);
+$('#hour_btn11').on('click', saveText);
+$('#hour_btn12').on('click', saveText);
+$('#hour_btn13').on('click', saveText);
+$('#hour_btn14').on('click', saveText);
+$('#hour_btn15').on('click', saveText);
+$('#hour_btn16').on('click', saveText);
+$('#hour_btn17').on('click', saveText);
+$('#hour_btn18').on('click', saveText);
 
 
 
