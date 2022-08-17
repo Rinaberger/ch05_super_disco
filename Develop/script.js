@@ -1,24 +1,26 @@
 // all functions run as part of whole document
 $(document).ready(function() {
 
-    let timeValue = $('#9').attr('data-time');
-    console.log(timeValue + " = hardcoded") 
-    console.log(timeValue) //log time value
+    let timeValue9 = $('#9').attr('data-time');
+    //console.log(timeValue9 + " = hardcoded") 
+    console.log(timeValue9) //log time value
+
+    let timeValue10 = $('#10').attr('data-time');
 
 
-//issue 1: timeValue === doesn't work
+//how to getItem and write to textArea
 //issue 2: red won't appear; stays grey so not understanding current hour. Tricked it 
 
 
 
 //functions
 function saveText(event) {  
-    timeValue = $(this).parent().attr('data-time');
-    let notesValue = $(this).siblings('.hour_notes').val()
-    console.log(notesValue + " = notes");
-    console.log(timeValue + " = hour notes inputted");
+    timeValue9 = $(this).parent().attr('data-time');
+    let notesValue9 = $(this).siblings('.hour_notes').val()
+    console.log(notesValue9 + " = notes");
+    console.log(timeValue9 + " = hour notes inputted");
     //save text area to localStorage
-    localStorage.setItem(timeValue, notesValue);           
+    localStorage.setItem(timeValue9, notesValue9);           
     }
 
 // change box alerts by time    
@@ -28,15 +30,30 @@ function setHourAlert() {
     console.log(hourNow + " = current hour");
     //bring in schedule time
     //let timeValue = timeValueAll;
-    console.log(timeValue + " = schedule hour");
+    console.log(timeValue9 + " = 9am schedule hour");
+    console.log(timeValue10 + " = 10am schedule hour")
     
-    //determine status
-    $('.hour_box').each(function() {
+    //determine status for 9:00am
+    $('.hour_box_9').each(function() {
         //let entryHour = $(this).parent().attr('data-time');
-        if (timeValue > hourNow) {
+        if (timeValue9 > hourNow) {
             $(this).addClass('future');
             console.log('future')
-        } else if (timeValue < hourNow) {
+        } else if (timeValue9 < hourNow) {
+            $(this).addClass('past');
+            console.log('past')
+        } else { 
+            $(this).addClass('present');
+            console.log('present')
+        }    
+    })
+
+    $('.hour_box_10').each(function() {
+        //let entryHour = $(this).parent().attr('data-time');
+        if (timeValue10 > hourNow) {
+            $(this).addClass('future');
+            console.log('future')
+        } else if (timeValue10 < hourNow) {
             $(this).addClass('past');
             console.log('past')
         } else { 
