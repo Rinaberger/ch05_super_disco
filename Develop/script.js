@@ -6,7 +6,9 @@ $(document).ready(function() {
     console.log(timeValue9) //log time value
 
     let timeValue10 = $('#10').attr('data-time');
-
+    let setDay = moment().day();
+        console.log(setDay)
+    
 
 //how to getItem and write to textArea
 //issue 2: red won't appear; stays grey so not understanding current hour. Tricked it 
@@ -29,6 +31,10 @@ function saveText(event) {
     //save text area to localStorage
     localStorage.setItem(timeValue10, notesValue10);
     }
+
+function currentDay() {
+    document.getElementById('currentDay').innerHTML = 'setDay'
+}
 
 // change box alerts by time    
 function setHourAlert() {
