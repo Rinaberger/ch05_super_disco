@@ -6,9 +6,40 @@ $(document).ready(function() {
     console.log(timeValue9) //log time value
 
     let timeValue10 = $('#10').attr('data-time');
-    let setDay = moment().day();
-        console.log(setDay)
+    //let setDay = moment().day();
+    console.log(timeValue10)
+
+    let timeValue11 = $('#11').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue11)
+
+    let timeValue12 = $('#12').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue12)
     
+    let timeValue13 = $('#13').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue13)   
+
+    let timeValue14 = $('#14').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue14)
+        
+    let timeValue15 = $('#15').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue15)
+        
+    let timeValue16 = $('#16').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue16)
+            
+    let timeValue17 = $('#17').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue17) 
+    
+    let timeValue18 = $('#18').attr('data-time');
+    //let setDay = moment().day();
+    console.log(timeValue18) 
 
 //how to getItem and write to textArea
 //issue 2: red won't appear; stays grey so not understanding current hour. Tricked it 
@@ -17,19 +48,12 @@ $(document).ready(function() {
 
 //functions
 function saveText(event) {  
-    timeValue9 = $(this).parent().attr('data-time');
-    let notesValue9 = $(this).siblings('.hour_notes9').val()
-    console.log(notesValue9 + " = notes");
-    console.log(timeValue9 + " = hour notes inputted");
+    let time = $(this).parent().attr('data-time');
+    console.log(time + " = notes");
+    let value = $(this).siblings('textarea').val()
+    console.log(value + " = hour notes inputted");
     //save text area to localStorage
-    localStorage.setItem(timeValue9, notesValue9); 
-    
-    timeValue10 = $(this).parent().attr('data-time');
-    let notesValue10 = $(this).siblings('.hour_notes10').val()
-    console.log(notesValue10 + " = notes");
-    console.log(timeValue10 + " = hour notes inputted");
-    //save text area to localStorage
-    localStorage.setItem(timeValue10, notesValue10);
+    localStorage.setItem(time, value);         
     }
 
 function currentDay() {
